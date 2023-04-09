@@ -1,4 +1,5 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:feeportal/app/constants/color_constants.dart';
 import 'package:flutter/material.dart';
 
@@ -374,6 +375,97 @@ class _HomeScreenState extends State<HomeScreen> {
                               ],
                             ),
                           ),
+                        ),
+                        const SizedBox(
+                          height: 35,
+                        ),
+                        CarouselSlider.builder(
+                          itemCount: 5,
+                          itemBuilder: (context, index, realIndex) {
+                            return GestureDetector(
+                              onTap: () {},
+                              child: Stack(
+                                children: [
+                                  Container(
+                                    width: 200,
+                                    height: 230,
+                                    decoration: BoxDecoration(
+                                      color: Colors.black,
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(15.0),
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Container(
+                                            height: 45,
+                                            width: 45,
+                                            decoration: const BoxDecoration(
+                                              color: Colors.white,
+                                              shape: BoxShape.circle,
+                                            ),
+                                          ),
+                                          const SizedBox(
+                                            height: 10,
+                                          ),
+                                          const Text(
+                                            'Earn CipherPoints',
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                              fontWeight: FontWeight.w700,
+                                              fontSize: 20,
+                                            ),
+                                          ),
+                                          const SizedBox(
+                                            height: 15,
+                                          ),
+                                          const Text(
+                                            'Earn exclusive rewards by developing your skills with us!',
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                              fontWeight: FontWeight.w400,
+                                              fontSize: 14,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                  Positioned(
+                                    top: 20,
+                                    right: 0,
+                                    child: Container(
+                                      width: 90,
+                                      height: 30,
+                                      color: Colors.orange,
+                                      child: const Center(
+                                        child: Text(
+                                          'Free',
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.w900,
+                                            fontSize: 13,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            );
+                          },
+                          options: CarouselOptions(
+                            viewportFraction: 0.65,
+                            enlargeCenterPage: true,
+                            height: 230,
+                            autoPlay: true,
+                            enableInfiniteScroll: true,
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 25,
                         ),
                       ],
                     ),
